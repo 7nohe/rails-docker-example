@@ -4,13 +4,16 @@ services:
     image: postgres
     volumes:
       - ./tmp/db:/var/lib/postgresql/data
+    container_name: "rails-db"
+    restart: always
   web:
     build:
       context: .
       dockerfile: ./server/docker/ruby/Dockerfile
       args:
-        - APP_NAME="rails-docker-example"
+        - APP_NAME=rails-docker-example
     tty: true
+    container_name: "rails-web"
     volumes:
       - .:/rails-docker-example
     ports:
