@@ -6,6 +6,8 @@ services:
       - ./tmp/db:/var/lib/postgresql/data
     container_name: "rails-db"
     restart: always
+    ports:
+      - 15432:5432
   web:
     build:
       context: .
