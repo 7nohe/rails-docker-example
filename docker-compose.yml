@@ -7,9 +7,10 @@ services:
   web:
     build:
       context: .
-      dockerfile: ./server/docker/ruby
+      dockerfile: ./server/docker/ruby/Dockerfile
       args:
-        - APP_NAME=rails-docker-example
+        - APP_NAME="rails-docker-example"
+    tty: true
     volumes:
       - .:/rails-docker-example
     ports:
