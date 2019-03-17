@@ -3,19 +3,7 @@
 ## Setup
 
 ```
+$ cp .env.example .env
 $ docker-compose up -d
-$ docker-compose exec web bash
-$ rails new . --database=postgresql
-```
-
-Edit database.yml
-
-```
-  host: db
-  username: postgres
-  password: postgres
-```
-
-```
-$ rails db:migrate
+$ docker-compose run web rails db:create
 ```
